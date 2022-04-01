@@ -25,8 +25,19 @@ let waitTimeLoss = 500;
 
 let streak = 0;
 
+const checkKey = (key)=>{
+    // if{
+    //     return true
+    // } 
+    if(key.charCodeAt(1) || (( key.charCodeAt(0) < 65) && ( key.charCodeAt(0) > 122))){
+        return false
+    }
+    return true
+}
+
 const dbg1 = inputBox.addEventListener('keydown', function(e){
-    inputBox.value = '';    
+    inputBox.value = ''; 
+    console.log(checkKey(e.key))   
     if(e.key == "Enter"){
         if(currentIndex == numberOfTiles){
             //evaluate tiles for similarities
@@ -55,7 +66,7 @@ const dbg1 = inputBox.addEventListener('keydown', function(e){
         return;
     }
     console.log(e.key);
-    if(currentIndex != numberOfTiles){
+    if(currentIndex != numberOfTiles && checkKey(e.key)){
         deck[currentIndex].textContent = e.key;
         currentIndex++;
     }
