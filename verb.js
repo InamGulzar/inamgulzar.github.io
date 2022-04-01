@@ -3,7 +3,7 @@ let inputBox = document.querySelector("input");
 let deck = document.querySelectorAll(".row0");
 
 //media
-let allAnswers = ["tile","main","mare","hare","fair","care","lair","tear","link","wink","sink","body","head","feet","legs","eyes","free","tree","true","edge"];
+let allAnswers = ["aaaa","tile","main","mare","hare","fair","care","lair","tear","link","wink","sink","body","head","feet","legs","eyes","free","tree","true","edge"];
 
 let currentAnswer;
 changeAnswer(); 
@@ -27,7 +27,7 @@ let streak = 0;
 
 inputBox.addEventListener('keydown', function(e){
     inputBox.value = '';    
-    if(e == "Enter"){
+    if(e.key == "Enter"){
         if(currentIndex == numberOfTiles){
             //evaluate tiles for similarities
             changeTiles();
@@ -51,12 +51,12 @@ inputBox.addEventListener('keydown', function(e){
             return;
         } 
     }
-    if(e == " "){
+    if(e.key == " "){
         return;
     }
-    console.log(e);
+    console.log(e.key);
     if(currentIndex != numberOfTiles){
-        deck[currentIndex].textContent = e;
+        deck[currentIndex].textContent = e.key;
         currentIndex++;
     }
 })
