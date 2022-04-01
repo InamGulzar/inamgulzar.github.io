@@ -25,7 +25,7 @@ let waitTimeLoss = 500;
 
 let streak = 0;
 
-inputBox.addEventListener('keydown', function(e){
+const dbg1 = inputBox.addEventListener('keydown', function(e){
     inputBox.value = '';    
     if(e.key == "Enter"){
         if(currentIndex == numberOfTiles){
